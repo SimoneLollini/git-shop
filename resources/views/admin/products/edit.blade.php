@@ -20,7 +20,7 @@
         @method('PUT')
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input value="{{old($product->title)}}" type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" aria-describedby="titleHlper" value="{{ old('title') }}">
+            <input value="{{old('title',$product->title)}}" type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" aria-describedby="titleHlper" value="{{ old('title') }}">
             <small id=" titleHlper" class="text-muted">Replace product title here</small>
         </div>
 
@@ -35,13 +35,13 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="descriptionHlper" value="{{ old('description') }}"></textarea>
+            <textarea value="{{old('description',$product->description)}}" type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="descriptionHlper" value="{{ old('description') }}"></textarea>
             <small id=" descriptionHlper" class="text-muted">Replace product description here</small>
         </div>
 
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input value="{{old($product->price)}}" type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" aria-describedby="priceHlper" value="{{ old('price') }}"></input>
+            <input value="{{old('price',$product->price)}}" type="number" name="price" id="price" class="form-control @error('price') is-invalid @enderror" aria-describedby="priceHlper" value="{{ old('price') }}"></input>
             <small id=" priceHlper" class="text-muted">Replace product price here</small>
         </div>
 

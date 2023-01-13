@@ -79,7 +79,16 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $val_data = $request->validated();
+        if ($request->hasFile('image')) {
+            if ($product->image) {
+                Storage::delete($product->image);
+            }
+            $image = Storage::put('uploads', $val_data['image']);
+            $val_data['image'] = $image;
+        }
+        $product->update($val_data);
+        return to_route('products.index')->with('message', '$product->title updated succesfully!');
     }
 
     /**
