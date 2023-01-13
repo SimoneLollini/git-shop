@@ -18,12 +18,14 @@
 
     <a class="btn btn-primary m-3 px-3" href="{{route('products.create')}}"><strong>+</strong></a>
     <div class="table-responsive">
-        <table class="table table-primary">
+        <table class="table table-striped-columns table-primary table-bordered table-hover">
             <thead>
                 <tr>
                     <th scope="col">Title</th>
                     <th scope="col">Image</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Tools</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -33,13 +35,15 @@
                     <td><img width="200" class="img-fluid my-4" src="{{asset('storage/' . $product->image)}}" alt=""></td>
                     <td>{{$product->price}}</td>
                     <td>
-                        <a class="btn btn-primary m-3 w-75" href="{{route('products.show', $product->id)}}">Details</a>
-                        <a class="btn btn-primary m-3 w-75" href="{{route('products.edit', $product->id)}}">Edit</a>
-                        <form action="{{route('products.destroy', $product->id)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <input class="btn btn-primary m-3 w-75" type="submit" value="Delete">
-                        </form>
+                        <div class="d-flex justify-content-evenly ">
+                            <a class="btn btn btn-primary btn-md my-3" href="{{route('products.show', $product->id)}}">Details</a>
+                            <a class="btn btn btn-primary btn-md my-3" href="{{route('products.edit', $product->id)}}">Edit</a>
+                            <form action="{{route('products.destroy', $product->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input class="btn btn btn-primary btn-md my-3" type="submit" value="Delete">
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 @empty
