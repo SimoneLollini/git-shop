@@ -30,6 +30,19 @@
             <small id="ImageHelper" class="text-muted">Add image</small>
         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="descriptionHlper" value="{{ old('description') }}"></textarea>
