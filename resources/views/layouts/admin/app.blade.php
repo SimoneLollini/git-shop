@@ -85,7 +85,35 @@
         </nav>
 
         <main class="">
-            @yield('content')
+            <div class="container-fluid">
+                <div class="row">
+                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                        <div class="position-sticky pt-3 sidebar-sticky">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">
+                                        <span data-feather="home" class="align-text-bottom"></span>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file" class="align-text-bottom"></span>
+                                        Product
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                        <div class="pt-3 pb-2 mb-3">
+                            @yield('content')
+                        </div>
+                    </main>
+                </div>
+            </div>
+
         </main>
     </div>
 </body>

@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
 use Faker\Generator as Faker;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
