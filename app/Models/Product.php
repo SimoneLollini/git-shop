@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Category;
-
-use App\Models\Category;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
@@ -15,7 +13,6 @@ class Product extends Model
     use HasFactory;
     protected $fillable = ['title', 'image', 'price', 'description'];
 
-    // Diego da qui
     /**
      * Get all of the posts for the Category
      *
@@ -26,18 +23,6 @@ class Product extends Model
         return $this->hasMany(Category::class);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    //fino a qui
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
