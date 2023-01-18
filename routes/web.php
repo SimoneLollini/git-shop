@@ -30,3 +30,4 @@ Route::middleware(['auth', 'verified'])
     });
 Route::resource('products', ProductController::class);
 require __DIR__ . '/auth.php';
+
