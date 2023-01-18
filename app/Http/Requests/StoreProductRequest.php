@@ -14,6 +14,9 @@ class StoreProductRequest extends FormRequest
     public function authorize()
     {
         return true;
+
+     
+
     }
 
     /**
@@ -29,7 +32,6 @@ class StoreProductRequest extends FormRequest
             'image' => 'nullable|image|max:300',
             'description' => 'nullable',
             'price' => 'nullable',
-
         ];
     }
 }
