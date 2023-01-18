@@ -23,6 +23,7 @@ class Product extends Model
         return $this->hasMany(Category::class);
     }
 
+    // Simo
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
