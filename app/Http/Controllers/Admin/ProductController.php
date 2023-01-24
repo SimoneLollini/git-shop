@@ -17,6 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        // Commento di Donato
         $products = Product::all();
         return view('admin.products.index', compact('products'));
     }
