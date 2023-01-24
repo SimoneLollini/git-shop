@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Category;
+use App\Models\Order;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
@@ -18,12 +19,12 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function categories(): HasMany
+    public function orders(): BelongsTo
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Order::class);
     }
 
-    // Simo
+
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
